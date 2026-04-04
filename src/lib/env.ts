@@ -7,6 +7,7 @@ loadEnvFile();
 const schema = z.object({
 	PORT: z.coerce.number().default(8082),
 	DATABASE_URL: z.string(),
+	CRYPTO_SALT: z.string().length(64),
 });
 
 export default () => schema.parse(process.env);
