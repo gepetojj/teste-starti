@@ -3,6 +3,7 @@ import { ConfigModule } from "@nestjs/config";
 import { APP_GUARD } from "@nestjs/core";
 import { seconds, ThrottlerGuard, ThrottlerModule } from "@nestjs/throttler";
 
+import { DrizzleModule } from "./db/drizzle.module";
 import env from "./lib/env";
 
 @Module({
@@ -19,6 +20,7 @@ import env from "./lib/env";
 				},
 			],
 		}),
+		DrizzleModule,
 	],
 	providers: [
 		{
