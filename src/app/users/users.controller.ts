@@ -11,6 +11,8 @@ import {
 } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { ZodResponse } from "nestjs-zod";
+import { isValidSemanticId } from "src/lib/semantic-id";
+import z from "zod";
 
 import { CreateUserResponse } from "./responses/create-user.response";
 import { GetUserResponse } from "./responses/get-user.response";
@@ -53,6 +55,8 @@ export class UsersController {
 		description: "Usuário não encontrado",
 	})
 	async listPublicPosts(@Param("id") id: string) {
+		z.string().refine(isValidSemanticId).parse(id);
+
 		const posts = await this.service.getPublicPostsByUserId(id);
 		return posts.map((post) => ({
 			id: post.id,
@@ -76,6 +80,8 @@ export class UsersController {
 		description: "Usuário não encontrado",
 	})
 	async listCommentsFromPublicPosts(@Param("id") id: string) {
+		z.string().refine(isValidSemanticId).parse(id);
+
 		const comments =
 			await this.service.getCommentsFromPublicPostsByUserId(id);
 		return comments.map((comment) => ({
@@ -96,6 +102,8 @@ export class UsersController {
 		description: "Usuário não encontrado",
 	})
 	async getUserById(@Param("id") id: string) {
+		z.string().refine(isValidSemanticId).parse(id);
+
 		const user = await this.service.getUserById(id);
 		return {
 			id: user.id,
@@ -124,6 +132,8 @@ export class UsersController {
 		description: "Erro ao atualizar usuário",
 	})
 	async updateUser(@Param("id") id: string, @Body() body: UpdateUserSchema) {
+		z.string().refine(isValidSemanticId).parse(id);
+
 		const user = await this.service.updateUser(id, body);
 		return {
 			id: user.id,
@@ -151,6 +161,8 @@ export class UsersController {
 		description: "Erro ao deletar usuário",
 	})
 	async deleteUser(@Param("id") id: string) {
+		z.string().refine(isValidSemanticId).parse(id);
+
 		await this.service.deleteUser(id);
 	}
 }

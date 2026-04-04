@@ -7,8 +7,8 @@ const publicPostItemSchema = z.object({
 		.describe("ID do post em formato semantic id. Padrão: post_<cuid2>"),
 	userId: z.string().nullable().describe("ID do autor do post."),
 	text: z.string().describe("Conteúdo do post."),
-	createdAt: z.iso.date().describe("Data de criação do post."),
-	updatedAt: z.iso.date().describe("Data de atualização do post."),
+	createdAt: z.iso.datetime().describe("Data de criação do post."),
+	updatedAt: z.iso.datetime().describe("Data de atualização do post."),
 });
 
 export const listPublicPostsResponseSchema = z.array(publicPostItemSchema);

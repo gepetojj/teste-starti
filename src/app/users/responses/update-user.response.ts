@@ -9,7 +9,7 @@ export const updateUserResponseSchema = z.object({
 	name: z.string().describe("Nome completo do usuário."),
 	email: z.string().describe("Email do usuário."),
 	biography: z.string().nullable().describe("Biografia do usuário."),
-	updatedAt: z.iso.date().describe("Data de atualização do usuário."),
+	updatedAt: z.iso.datetime().describe("Data de atualização do usuário."),
 });
 
 export class UpdateUserResponse extends createZodDto(
