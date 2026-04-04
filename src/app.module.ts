@@ -1,8 +1,10 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
-import { APP_GUARD } from "@nestjs/core";
+import { APP_GUARD, APP_INTERCEPTOR, APP_PIPE } from "@nestjs/core";
 import { seconds, ThrottlerGuard, ThrottlerModule } from "@nestjs/throttler";
+import { ZodSerializerInterceptor, ZodValidationPipe } from "nestjs-zod";
 
+import { UsersModule } from "./app/users/users.module";
 import { DrizzleModule } from "./db/drizzle.module";
 import env from "./lib/env";
 
@@ -21,11 +23,22 @@ import env from "./lib/env";
 			],
 		}),
 		DrizzleModule,
+
+		// App
+		UsersModule,
 	],
 	providers: [
 		{
 			provide: APP_GUARD,
 			useClass: ThrottlerGuard,
+		},
+		{
+			provide: APP_PIPE,
+			useClass: ZodValidationPipe,
+		},
+		{
+			provide: APP_INTERCEPTOR,
+			useClass: ZodSerializerInterceptor,
 		},
 	],
 })

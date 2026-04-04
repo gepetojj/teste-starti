@@ -5,6 +5,7 @@ import { Pool } from "pg";
 import * as schema from "./schema";
 
 export const DrizzleAsyncProvider = "DrizzleAsyncProvider";
+export type DrizzleDatabase = NodePgDatabase<typeof schema>;
 
 export const drizzleProvider = [
 	{
@@ -17,7 +18,7 @@ export const drizzleProvider = [
 				connectionString,
 			});
 
-			return drizzle(pool, { schema }) as NodePgDatabase<typeof schema>;
+			return drizzle(pool, { schema }) as DrizzleDatabase;
 		},
 	},
 ];
