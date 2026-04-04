@@ -26,7 +26,6 @@ async function bootstrap() {
 	const config = new DocumentBuilder()
 		.setTitle("Teste Starti")
 		.setVersion("1.0")
-		.addBearerAuth({ bearerFormat: "JWT", scheme: "bearer", type: "http" })
 		.build();
 
 	const document = SwaggerModule.createDocument(app, config, {
