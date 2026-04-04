@@ -4,6 +4,7 @@ import { APP_GUARD, APP_INTERCEPTOR, APP_PIPE } from "@nestjs/core";
 import { seconds, ThrottlerGuard, ThrottlerModule } from "@nestjs/throttler";
 import { ZodSerializerInterceptor, ZodValidationPipe } from "nestjs-zod";
 
+import { CommentsModule } from "./app/comments/comments.module";
 import { PostsModule } from "./app/posts/posts.module";
 import { UsersModule } from "./app/users/users.module";
 import { DrizzleModule } from "./db/drizzle.module";
@@ -28,6 +29,7 @@ import env from "./lib/env";
 		// App
 		UsersModule,
 		PostsModule,
+		CommentsModule,
 	],
 	providers: [
 		{
