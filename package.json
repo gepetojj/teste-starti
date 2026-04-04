@@ -1,0 +1,41 @@
+{
+	"name": "teste-starti",
+	"version": "0.0.1",
+	"author": "João Pedro <contato@gepetojj.com>",
+	"license": "MIT",
+	"scripts": {
+		"dev": "nest start --watch",
+		"build": "nest build",
+		"start": "node dist/main",
+		"start:debug": "nest start --debug --watch",
+		"lint": "biome check --write",
+		"commit": "git cz"
+	},
+	"dependencies": {
+		"@nestjs/common": "^11.1.18",
+		"@nestjs/core": "^11.1.18",
+		"@nestjs/platform-express": "^11.1.18",
+		"reflect-metadata": "^0.2.2",
+		"rxjs": "^7.8.2",
+		"zod": "^4.3.6"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.10",
+		"@nestjs/cli": "^11.0.17",
+		"@nestjs/schematics": "^11.0.10",
+		"@nestjs/testing": "^11.1.18",
+		"@types/express": "^5.0.6",
+		"@types/node": "^25.5.2",
+		"commitizen": "^4.3.1",
+		"cz-conventional-changelog": "^3.3.0",
+		"globals": "^17.4.0",
+		"source-map-support": "^0.5.21",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.3"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	}
+}
