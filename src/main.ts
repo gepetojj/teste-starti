@@ -18,10 +18,7 @@ async function bootstrap() {
 	app.use(helmet());
 	app.use(compression());
 	app.enableCors({
-		origin:
-			process.env.NODE_ENV === "production"
-				? configService.getOrThrow<string[]>("SERVER_ALLOWED_ORIGINS")
-				: "*",
+		origin: "*",
 	});
 
 	await app.listen(configService.getOrThrow<number>("PORT"));
