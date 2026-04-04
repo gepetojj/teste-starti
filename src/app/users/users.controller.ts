@@ -1,5 +1,5 @@
-import { Body, Controller, Post } from "@nestjs/common";
-import { ApiOperation, ApiTags } from "@nestjs/swagger";
+import { Body, Controller, HttpStatus, Post } from "@nestjs/common";
+import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { ZodResponse } from "nestjs-zod";
 
 import { CreateUserResponse } from "./responses/create-user.response";
@@ -13,7 +13,15 @@ export class UsersController {
 
 	@Post()
 	@ApiOperation({ summary: "Cria um novo usuário" })
-	@ZodResponse({ type: CreateUserResponse })
+	@ZodResponse({ type: CreateUserResponse, status: HttpStatus.CREATED })
+	@ApiResponse({
+		status: HttpStatus.CONFLICT,
+		description: "Nome de usuário e/ou email já existem",
+	})
+	@ApiResponse({
+		status: HttpStatus.INTERNAL_SERVER_ERROR,
+		description: "Erro ao criar usuário",
+	})
 	async createUser(@Body() body: CreateUserSchema) {
 		const user = await this.service.createUser(body);
 		return {
