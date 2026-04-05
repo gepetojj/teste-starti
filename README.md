@@ -61,6 +61,48 @@ Todos os endpoints são versionados sob `/v1/`.
 | GET | `/v1/users/:id/posts` | Listar posts públicos do usuário |
 | GET | `/v1/users/:id/comments` | Listar comentários do usuário em posts públicos |
 
+<details>
+<summary><strong>Criar usuário</strong> — <code>POST /v1/users</code></summary>
+
+![Criar usuário](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/create-user.png)
+
+</details>
+
+<details>
+<summary><strong>Buscar usuário pelo ID</strong> — <code>GET /v1/users/:id</code></summary>
+
+![Buscar usuário pelo ID](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/get-user-by-id.png)
+
+</details>
+
+<details>
+<summary><strong>Atualizar usuário</strong> — <code>PUT /v1/users/:id</code></summary>
+
+![Atualizar usuário](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/update-user.png)
+
+</details>
+
+<details>
+<summary><strong>Apagar usuário</strong> — <code>DELETE /v1/users/:id</code></summary>
+
+![Apagar usuário](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/delete-user.png)
+
+</details>
+
+<details>
+<summary><strong>Listar posts do usuário</strong> — <code>GET /v1/users/:id/posts</code></summary>
+
+![Listar posts do usuário](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/list-posts-by-user.png)
+
+</details>
+
+<details>
+<summary><strong>Listar comentários do usuário</strong> — <code>GET /v1/users/:id/comments</code></summary>
+
+![Listar comentários do usuário](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/list-comments-by-user.png)
+
+</details>
+
 ### Posts (`/v1/posts`)
 
 | Método | Rota | Descrição |
@@ -72,6 +114,48 @@ Todos os endpoints são versionados sob `/v1/`.
 | DELETE | `/v1/posts/:id` | Apagar publicação |
 | GET | `/v1/posts/:id/comments` | Listar comentários da publicação |
 
+<details>
+<summary><strong>Criar publicação</strong> — <code>POST /v1/posts</code></summary>
+
+![Criar publicação](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/create-post.png)
+
+</details>
+
+<details>
+<summary><strong>Buscar publicação pelo ID</strong> — <code>GET /v1/posts/:id</code></summary>
+
+![Buscar publicação pelo ID](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/get-post-by-id.png)
+
+</details>
+
+<details>
+<summary><strong>Atualizar publicação</strong> — <code>PUT /v1/posts/:id</code></summary>
+
+![Atualizar publicação](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/update-post.png)
+
+</details>
+
+<details>
+<summary><strong>Arquivar publicação</strong> — <code>PUT /v1/posts/:id/archive</code></summary>
+
+![Arquivar publicação](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/archive-post.png)
+
+</details>
+
+<details>
+<summary><strong>Apagar publicação</strong> — <code>DELETE /v1/posts/:id</code></summary>
+
+![Apagar publicação](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/delete-post.png)
+
+</details>
+
+<details>
+<summary><strong>Listar comentários da publicação</strong> — <code>GET /v1/posts/:id/comments</code></summary>
+
+![Listar comentários da publicação](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/list-comments-by-post.png)
+
+</details>
+
 ### Comments (`/v1/comments`)
 
 | Método | Rota | Descrição |
@@ -79,6 +163,27 @@ Todos os endpoints são versionados sob `/v1/`.
 | POST | `/v1/comments` | Criar comentário |
 | PUT | `/v1/comments/:id` | Atualizar comentário |
 | DELETE | `/v1/comments/:id` | Apagar comentário |
+
+<details>
+<summary><strong>Criar comentário</strong> — <code>POST /v1/comments</code></summary>
+
+![Criar comentário](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/create-comment.png)
+
+</details>
+
+<details>
+<summary><strong>Atualizar comentário</strong> — <code>PUT /v1/comments/:id</code></summary>
+
+![Atualizar comentário](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/update-comment.png)
+
+</details>
+
+<details>
+<summary><strong>Apagar comentário</strong> — <code>DELETE /v1/comments/:id</code></summary>
+
+![Apagar comentário](https://raw.githubusercontent.com/gepetojj/teste-starti/refs/heads/main/.github/assets/delete-comment.png)
+
+</details>
 
 ## Documentação
 
